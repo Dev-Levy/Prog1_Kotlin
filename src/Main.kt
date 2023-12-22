@@ -21,6 +21,24 @@ fun main() {
     val notOdd = simple.decision(almostOddArray)
     arrayPrint(almostOddArray)
     println("The array contains an even number?\t$notOdd")
+
+    println()
+
+    arrayPrint(oddArray)
+    val idx_odd = simple.selection(oddArray)
+    if (idx_odd==0)
+        println("No even numbers in array!")
+    else
+        println("$idx_odd. number is even!")
+
+    println()
+
+    arrayPrint(almostOddArray)
+    val idx_even = simple.selection(almostOddArray)
+    if (idx_even==0)
+        println("No even numbers in array!")
+    else
+        println("$idx_even. number is even!")
 }
 
 fun <T> arrayPrint(array: Array<T>) {
