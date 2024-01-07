@@ -20,6 +20,14 @@ class SimpleProgAlgos {
 
         return bool
     }
+    fun primeTest(N: Int): Boolean {
+        var i = 2;
+        val root: Int = Math.sqrt(N.toDouble()).toInt()
+        while (i <= root && !(N % i == 0))
+            i++;
+
+        return i > root;
+    }
 
     //kiválasztás tétele - (hol van a tömbben páros szám?)
     fun selection(array: Array<Int>): Int {
@@ -27,8 +35,12 @@ class SimpleProgAlgos {
         while (i < array.size && array[i] % 2 != 0)
             i++
         if (i < array.size)
-            return i
+            return i+1
         else
             return 0
+    }
+
+    fun linearSearch(array: Array<Int>){
+
     }
 }

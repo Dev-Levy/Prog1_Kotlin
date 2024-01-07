@@ -39,6 +39,13 @@ fun main() {
         println("No even numbers in array!")
     else
         println("$idx_even. number is even!")
+
+    println()
+
+    val N = 23
+    val prime = simple.primeTest(N)
+    println("$N is prime? $prime")
+
 }
 
 fun <T> arrayPrint(array: Array<T>) {
