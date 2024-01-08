@@ -3,6 +3,7 @@ fun main() {
     val numArray = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     val oddArray = arrayOf(1, 3, 5, 7, 9)
     val almostOddArray = arrayOf(1, 3, 5, 7, 8, 9)
+    val randomArray = arrayOf(5,2,8,1,9,0,1,2,5)
 
     val simple = SimpleProgAlgos()
 
@@ -26,7 +27,7 @@ fun main() {
 
     arrayPrint(oddArray)
     val idx_odd = simple.selection(oddArray)
-    if (idx_odd==0)
+    if (idx_odd == 0)
         println("No even numbers in array!")
     else
         println("$idx_odd. number is even!")
@@ -35,7 +36,7 @@ fun main() {
 
     arrayPrint(almostOddArray)
     val idx_even = simple.selection(almostOddArray)
-    if (idx_even==0)
+    if (idx_even == 0)
         println("No even numbers in array!")
     else
         println("$idx_even. number is even!")
@@ -46,6 +47,26 @@ fun main() {
     val prime = simple.primeTest(N)
     println("$N is prime? $prime")
 
+    println()
+
+    arrayPrint(almostOddArray)
+    val search = simple.linearSearch(almostOddArray)
+    if (search > 0)
+        println("Even number at ${search+1}. place in array")
+    else
+        println("No even numbers in the array")
+
+    println()
+
+    arrayPrint(numArray)
+    var count = simple.countEvens(numArray)
+    println("$count even numbers in this array")
+
+    println()
+
+    arrayPrint(randomArray)
+    var max = simple.max(randomArray)
+    println("Highest number at ${max+1}. place in array")
 }
 
 fun <T> arrayPrint(array: Array<T>) {
