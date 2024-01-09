@@ -3,10 +3,10 @@ fun main() {
     val numArray = arrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9)
     val oddArray = arrayOf(1, 3, 5, 7, 9)
     val almostOddArray = arrayOf(1, 3, 5, 7, 8, 9)
-    val randomArray = arrayOf(5, 2, 2, 8, 1, 9, 0, 1, 4, 5)
+    val randomArray = arrayOf(5, 2, 2, 8, 1, 9, 0, 1, 4, 5, 9)
 
-    val sortedArray3 = arrayOf(1,4,7,10,13,16)
-    val sortedArray2 = arrayOf(0,2,4,6,8,10)
+    val sortedArray3 = arrayOf(1, 4, 7, 10, 13, 16)
+    val sortedArray2 = arrayOf(0, 2, 4, 6, 8, 10)
 
     //region simple algos
 //
@@ -76,52 +76,62 @@ fun main() {
     //endregion
 
     //region complex algos
-
-    val complex = ComplexProgAlgos()
-
-    arrayPrint(randomArray)
-    arrayPrint(complex.negativecopy(randomArray))
-    println()
-
-    arrayPrint(randomArray)
-    val pair = complex.arrayEvenSelection(randomArray)
-    println("${pair.second} even numbers in array")
-    arrayPrint(pair.first)
-    println()
-
+//
+//    val complex = ComplexProgAlgos()
+//
+//    arrayPrint(randomArray)
+//    arrayPrint(complex.negativecopy(randomArray))
+//    println()
+//
+//    arrayPrint(randomArray)
+//    val pair = complex.arrayEvenSelection(randomArray)
+//    println("${pair.second} even numbers in array")
+//    arrayPrint(pair.first)
+//    println()
+//
 //    arrayPrint(randomArray)
 //    val db = complex.arrayEvenSeparationInTheArray(randomArray)
 //    println("${db+1} even number in array")
 //    arrayPrint(randomArray)
 //    println()
-
-
-    arrayPrint(almostOddArray)
-    arrayPrint(randomArray)
-    val intersection = complex.intersection(almostOddArray, randomArray)
-    println("${intersection.second} common numbers in these arrays")
-    arrayPrint(intersection.first)
-    println()
-
-    arrayPrint(almostOddArray)
-    arrayPrint(randomArray)
-    val union = complex.union(almostOddArray, randomArray)
-    println("${union.second} numbers in the union")
-    arrayPrint(union.first)
-    println()
-
-    arrayPrint(randomArray)
-    println("${complex.setMaker(randomArray)} different numbers in array")
-    arrayPrint(randomArray)
-    println()
-
-    arrayPrint(sortedArray2)
-    arrayPrint(sortedArray3)
-    println("${complex.runTogether(sortedArray2,sortedArray3).second} numbers in this array")
-    arrayPrint(complex.runTogether(sortedArray2,sortedArray3).first)
-
-
+//
+//
+//    arrayPrint(almostOddArray)
+//    arrayPrint(randomArray)
+//    val intersection = complex.intersection(almostOddArray, randomArray)
+//    println("${intersection.second} common numbers in these arrays")
+//    arrayPrint(intersection.first)
+//    println()
+//
+//    arrayPrint(almostOddArray)
+//    arrayPrint(randomArray)
+//    val union = complex.union(almostOddArray, randomArray)
+//    println("${union.second} numbers in the union")
+//    arrayPrint(union.first)
+//    println()
+//
+//    arrayPrint(randomArray)
+//    println("${complex.setMaker(randomArray)} different numbers in array")
+//    arrayPrint(randomArray)
+//    println()
+//
+//    arrayPrint(sortedArray2)
+//    arrayPrint(sortedArray3)
+//    println("${complex.runTogether(sortedArray2, sortedArray3).second} numbers in this array")
+//    arrayPrint(complex.runTogether(sortedArray2, sortedArray3).first)
+//    println()
+//
+//    val limit = 3
+//    arrayPrint(sortedArray3)
+//    if (complex.searchAndCountEvens(sortedArray3, limit) > 0)
+//        println("There is $limit even numbers in this array")
+//    else
+//        println("There isn't $limit even numbers in this array")
+//
+//    val maxok = complex.maxSelection(randomArray)
     //endregion
+
+    //region sorting algos
 }
 
 fun <T> arrayPrint(array: Array<T>) {

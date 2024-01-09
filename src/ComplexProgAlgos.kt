@@ -1,3 +1,5 @@
+import kotlin.math.max
+
 class ComplexProgAlgos {
 
     fun negativecopy(array: Array<Int>): Array<Int> {
@@ -7,6 +9,7 @@ class ComplexProgAlgos {
         }
         return out
     }
+
     fun arrayEvenSelection(array: Array<Int>): Pair<Array<Int>, Int> {
         var out = Array(array.size) { 0 }
         var db = 0
@@ -20,6 +23,7 @@ class ComplexProgAlgos {
 
         return Pair(out, db)
     }
+
     fun arrayEvenSelectionInTheArray(array: Array<Int>): Pair<Array<Int>, Int> {
         var db = 0
 
@@ -34,6 +38,7 @@ class ComplexProgAlgos {
 
         return Pair(array, db)
     }
+
     fun arrayEvenSeparationInTheArray(array: Array<Int>): Int {
         var bal = 0
         var jobb = array.size - 1
@@ -55,6 +60,7 @@ class ComplexProgAlgos {
         else return bal - 1
 
     }
+
     fun intersection(array1: Array<Int>, array2: Array<Int>): Pair<Array<Int>, Int> {
         val intersection = Array(array1.size) { 0 }
         var db = 0
@@ -69,6 +75,7 @@ class ComplexProgAlgos {
 
         return Pair(intersection, db)
     }
+
     fun union(array1: Array<Int>, array2: Array<Int>): Pair<Array<Int>, Int> {
         val union = Array(array1.size + array2.size) { 0 }
         for (i in array1.indices) {
@@ -85,6 +92,7 @@ class ComplexProgAlgos {
         }
         return Pair(union, db)
     }
+
     fun setMaker(array: Array<Int>): Int {
         var db = 1
         for (i in 1..array.size - 1) {
@@ -98,6 +106,7 @@ class ComplexProgAlgos {
         }
         return db + 1
     }
+
     fun runTogether(array1: Array<Int>, array2: Array<Int>): Pair<Array<Int>, Int> {
         val runtogether = Array(array1.size + array2.size) { 0 }
         var i = 0
@@ -106,11 +115,9 @@ class ComplexProgAlgos {
         while (i < array1.size && j < array2.size) {
             if (array1[i] < array2[j]) {
                 runtogether[db] = array1[i++]
-            }
-            else if (array1[i] > array2[j]) {
+            } else if (array1[i] > array2[j]) {
                 runtogether[db] = array2[j++]
-            }
-            else {
+            } else {
                 runtogether[db] = array1[i]
                 i++
                 j++
@@ -127,5 +134,39 @@ class ComplexProgAlgos {
         }
 
         return Pair(runtogether, db)
+    }
+
+    fun searchAndCountEvens(array: Array<Int>, limit: Int): Int {
+        var db = 0
+        var i = 0
+        while (i < array.size && db < limit) {
+            if (array[i] % 2 == 0)
+                db++
+            i++
+        }
+        var bool = db == limit
+        if (bool)
+            return i
+        else
+            return 0
+    }
+
+    fun maxSelection(array: Array<Int>): Triple<Array<Int>, Int, Int> {
+        val maxok = Array(array.size) { 0 }
+        var maxValue = array[0]
+        var db = 0
+        maxok[db] = 1
+        for (i in 1..maxok.size - 1){
+            if (array[i] > maxValue){
+                maxok[db] = i
+                db = 1
+                maxValue = array[i]
+            }
+            else if (array[i] == maxValue){
+                maxok[db] = i
+                db++
+            }
+        }
+        return Triple(maxok, db, maxValue)
     }
 }
