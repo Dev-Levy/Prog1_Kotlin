@@ -1,3 +1,5 @@
+package Algos
+
 class SortingProgAlgos {
 
     fun simpleSwapSort(array: Array<Int>) {

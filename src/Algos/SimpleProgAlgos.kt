@@ -1,3 +1,5 @@
+package Algos
+
 class SimpleProgAlgos {
 
     //sorozatszámítás tétele
